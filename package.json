@@ -1,0 +1,84 @@
+{
+  "name": "react-typescript-boilerplate",
+  "private": true,
+  "version": "5.66.0",
+  "type": "module",
+  "description": "React + TypeScript boilerplate with Vite, SCSS modules, ESLint, Stylelint, Prettier, Husky, and lint-staged.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eluyema/react-typescript-boilerplate.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint:fix": "eslint src --no-inline-config --report-unused-disable-directives --fix",
+    "lint:check": "eslint src --no-inline-config --report-unused-disable-directives --max-warnings 0",
+    "lint:css": "stylelint **/*.css --aei --color",
+    "lint:css:fix": "stylelint **/*.css --aei --color --fix",
+    "prettier": "prettier src --check",
+    "prettier:fix": "prettier src --write",
+    "preview": "vite preview",
+    "precommit": "lint-staged",
+    "prepare": "node ./.husky/install.mjs"
+  },
+  "engines": {
+    "npm": ">=10.9.0",
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "boilerplate",
+    "vite",
+    "scss",
+    "eslint",
+    "stylelint",
+    "prettier",
+    "husky",
+    "lint-staged",
+    "frontend",
+    "starter",
+    "template",
+    "modern",
+    "latest"
+  ],
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "lint-staged": {
+    "*.{html,md,json,jsonc}": [
+      "npm run prettier:fix"
+    ],
+    "*.{ts,tsx}": [
+      "npm run prettier:fix",
+      "npm run lint:check"
+    ],
+    "*.css": [
+      "npm run lint:css:fix"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.1",
+    "sass-embedded": "1.83.4",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.22.0",
+    "vite": "^6.1.0"
+  }
+}
